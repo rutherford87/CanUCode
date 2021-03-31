@@ -11,7 +11,7 @@ This is my working example of a quiz, with three questions, and a timer. The tim
 The repo can be found here: 
 [TPR_GitHub](https://github.com/rutherford87/CanUCode)
 
-The website can be viewed here: [Austin's Hardest Quiz](https://rutherford87.github.io/PROfolio_TPR/)
+The website can be viewed here: [Austin's Hardest Quiz](https://rutherford87.github.io/CanUCode/)
 
 Here is a screenshot of the thrilling quiz:
 ![WOW!](./ExampleLiveQuiz.PNG)
