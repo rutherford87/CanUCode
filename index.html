@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>CanUCode?</title>
+    <meta charset="utf-8">
+  </head> 
+
+  <!--Set up elements to include in quiz -->
+
+  <body>
+    <div class="container">
+  <!-- Start button to show up in 'start' element -->
+      <button id='start'>Start Quiz</button>
+     
+   <!-- Question and answer choices will appear in wrapper  -->
+   <!-- Display none prevents the first question from showing before pressing the start button  -->
+   <div class="wrapper" style="display:none">
+      
+        <div id='question'></div>
+        <div id='choices'>
+        <button id="choice1"></button>
+        <button id="choice2"></button>
+        <button id="choice3"></button>
+        <button id="choice4"></button>
+        <!-- Update will show an alert of correct or incorrect selection -->
+      </div>
+      <div id='update'></div>
+    <!-- Timer will appear in 'time' element -->  
+    <div id='time'>
+          <div id='timeLeft'></div>
+      </div>
+    </div>
+    <script src="./script.js"></script>
+  </body>
+</html>
