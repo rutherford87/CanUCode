@@ -77,6 +77,10 @@ function showQuestion(){
 	scoreArea.textContent='Final Score: ' + score;
 	clearInterval(timerInterval);
 	timeEl.textContent = "";
+	localStorage.setItem("Score", score);
+	//will need to add a form to input for player to add name to local storage
+	//localStorage.setItem("Player", count);
+	//add another button to retake quiz
 }}
 
 //function to start quiz with a click of a button
@@ -97,7 +101,7 @@ if (index <= (questionAnswer.length-1)) {
 } 
 }
 
-//After a slection is made, write function to compare selection to answer
+//After a selection is made, write function to compare selection to answer
 function checkAnswer(selection){
 console.log(selection);
 console.log(questionAnswer[index].correctAnswer);
@@ -106,6 +110,8 @@ console.log(questionAnswer[index].correctAnswer);
 		indexQuestion();
 		showQuestion();
  } else {
+	 secondsLeft--;
+	 secondsLeft--;
 	indexQuestion();
 	showQuestion();
 }
