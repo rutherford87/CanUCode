@@ -7,6 +7,8 @@ var choice2 = document.getElementById('choice2');
 var choice3 = document.getElementById('choice3');
 var choice4 = document.getElementById('choice4');
 var scoreArea = document.getElementById('update');
+var timeEl = document.getElementById("timeCounter");
+
 //still need vars for timer  
 //var timeLeftEl= document.querySelector(".timeLeft") 
 //var timeLimit = 10 // 10 seconds
@@ -42,6 +44,25 @@ var index = 0;
 //score will start at zero and add 1 as each answer is selected correctly. This will be diplayed and logged to local storage when the quiz has ended
 var score = 0;
 
+//select seconds to countdown from
+var secondsLeft = 10;
+
+function setTime() {
+    var timerInterval = setInterval(function() {
+        secondsLeft--; 
+        timeEl.textContent = secondsLeft + " seconds remaining";
+//if countdown = zero, time has expired, send "game over" message
+if(secondsLeft === 0) { 
+	clearInterval(timerInterval);
+    sendMessage();
+}},1000);
+}
+
+function sendMessage() {
+    timeEl.textContent = "Time's Up";
+	questionArea.textContent='';
+} 
+
 //function to display question 1 through last question, after last question is complete, display final score
 function showQuestion(){
 	if (index <= (questionAnswer.length-1)) {
@@ -54,6 +75,8 @@ function showQuestion(){
 } else {
 	questionArea.textContent="Congrats, you finished!";
 	scoreArea.textContent='Final Score: ' + score;
+	clearInterval(timerInterval);
+	timeEl.textContent = "";
 }}
 
 //function to start quiz with a click of a button
@@ -62,6 +85,7 @@ start.addEventListener("click",startQuiz);
 function startQuiz(){
 	start.style.display="none";
 	showQuestion();
+	setTime();
 	questionArea.style.display="block"; // could change later
 }
 
